@@ -2,10 +2,10 @@ from flask import Flask , render_template, request
 import numpy as np
 import pickle
 from sklearn.ensemble import GradientBoostingClassifier
-
-with open('xgb_cv_final.pkl','rb') as f:
-    clf_individual = pickle.load(f)
-
+import joblib
+#with open('xgb_cv_final.pkl','rb') as f:
+#    clf_individual = pickle.load(f)
+clf_individual = joblib.load("xgb_cv_final.pkl")
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
