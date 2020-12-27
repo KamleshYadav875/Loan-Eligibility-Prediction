@@ -2,8 +2,8 @@ from flask import Flask , render_template, request
 import numpy as np
 import pickle
 
-with open('xgb_cv_final.pkl','rb') as f:
-    clf_individual = pickle.load(f)
+# with open('xgb_cv_final.pkl','rb') as f:
+#     clf_individual = pickle.load(f)
 
 app = Flask(__name__)
 
@@ -87,7 +87,8 @@ def home():
             Property_Area_Urban = 0
 
         predInput = [[amountTerm,credit, amount,totalIncome, Gender_Female, Gender_Male, Married_No, Married_Yes, Dependents_0, Dependents_1, Dependents_2, Dependents_3, Education_Graduate, Education_Not_Graduate, Self_Employed_No, Self_Employed_Yes,Property_Area_Rural, Property_Area_Semiurban, Property_Area_Urban]]
-        o = clf_individual.predict(predInput)
+        # o = clf_individual.predict(predInput)
+        o = 0
         
         if o == 0:
             output = "You are not qualify for loan"
