@@ -1,6 +1,7 @@
 from flask import Flask , render_template, request
 import numpy as np
 import pickle
+from sklearn.ensemble import GradientBoostingClassifier
 
 # with open('xgb_cv_final.pkl','rb') as f:
 #     clf_individual = pickle.load(f)
